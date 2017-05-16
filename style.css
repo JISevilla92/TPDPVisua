@@ -8,6 +8,11 @@
   width: 800px;
 }
 
+.selected-champ {
+  border: 1px solid rgb(180,180,180);
+  box-shadow: 0 0 15px rgb(255,255,255);
+}
+
 .most-played-container {
   display:  flex; 
   justify-content: space-around;

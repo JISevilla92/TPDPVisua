@@ -17,13 +17,13 @@ body { font: 12px Arial;}
   
   <div class='tpDP' ng-controller="DataController as dtr">
     <div id="viz" class='giantography' back-img='{{dtr.backimg}}'>
-       <div class='champ-container'>
+       <div class='champ-container' ng-click='dtr.resetGraph()'>
            <div class='champ'  ng-repeat='champion in dtr.champions'>
                 <img class='champ-img' 
                 ng-src='{{champion.icon}}' 
-                ng-click='dtr.onclick(champion.id)'/>
+                ng-click='dtr.onclick(champion.id); $event.stopPropagation()'
+                ng-class='{"selected-champ": champion.id === dtr.champSelected.id}'/>
            </div>
-           <img class='champ-img reset' src='images/error.svg' ng-click='dtr.resetGraph()'/>
         </div>
         <div class='graph-picker-container'>
             <input class='graph-pick' ng-model='dtr.show' ng-click='dtr.recalculate()' type="radio" name="most" value="most"> Historico - Mas Jugados
