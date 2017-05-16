@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>TP DP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style> /* set the CSS */
+
+body { font: 12px Arial;}
+
+
+</style>
+<body ng-app='tpDP'>
+
+  
+  <div class='tpDP' ng-controller="DataController as dtr">
+    <div id="viz" class='giantography' back-img='{{dtr.backimg}}'>
+       <div class='champ-container'>
+           <div class='champ'  ng-repeat='champion in dtr.champions'>
+                <img class='champ-img' 
+                ng-src='{{champion.icon}}' 
+                ng-click='dtr.onclick(champion.id)'/>
+           </div>
+           <img class='champ-img reset' src='images/error.svg' ng-click='dtr.resetGraph()'/>
+        </div>
+        <div class='graph-picker-container'>
+            <input class='graph-pick' ng-model='dtr.show' ng-click='dtr.recalculate()' type="radio" name="most" value="most"> Historico - Mas Jugados
+            <input class='graph-pick' ng-model='dtr.show' ng-click='dtr.recalculate()' type="radio" name="other" value="other"> Por Temporada
+            <input class='graph-pick' ng-model='dtr.show' ng-click='dtr.recalculate()' type="radio" name="monthly" value="monthly"> Mensual
+            <input class='graph-pick' ng-model='dtr.show' ng-click='dtr.recalculate()' type="radio" name="season" value="season"> Semanal
+        </div>
+        <div class='custom-line-chart' ng-show='dtr.show==="season"'>
+          <h1 class='chart-title'>{{dtr.champSelected.key}}</h1>
+          <canvas id="line" class="chart chart-line champ-bg" 
+          chart-data='dtr.lineChartData' chart-labels='dtr.lineChartLabels' 
+          chart-options='dtr.lineChartOptions' chart-series='dtr.lineChartSeries'
+          chart-colors='dtr.lineChartColors'></canvas>
+        </div>
+        <div class='custom-line-chart' ng-show='dtr.show==="monthly"'>
+          <h1 class='chart-title'>{{dtr.champSelected.key}}</h1>
+          <canvas id="line" class="chart chart-line champ-bg" 
+          chart-data='dtr.lineChartMonthlyData' chart-labels='dtr.lineChartMonthlyLabels' 
+          chart-options='dtr.lineChartMonthlyOptions' chart-series='dtr.lineChartMonthlySeries'
+          chart-colors='dtr.lineChartMonthlyColors'></canvas>
+        </div>
+        <div class='custom-bar-chart' ng-show='dtr.show==="other"'>
+          <h1 class='chart-title'>{{dtr.champSelected.key}}</h1>
+          <canvas id="bar" class="chart chart-bar" 
+          chart-data='dtr.barChartCGSData' chart-labels='dtr.barChartCGSLabels' 
+          chart-options='dtr.barChartCGSOptions' chart-series='dtr.barChartCGSSeries'
+          chart-colors='dtr.barChartCGSColors'></canvas>
+        </div>
+        <div class='custom-bar-chart' ng-show='dtr.show==="most"'>
+          <canvas id="bar" class="chart chart-bar" 
+          chart-data='dtr.barChartData' chart-labels='dtr.barChartLabels' 
+          chart-options='dtr.barChartOptions' chart-series='dtr.barChartSeries'
+          chart-colors='dtr.barChartColors'></canvas>
+
+            <div class='most-played-container'>
+                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Janna.png"class='champ-img' 
+                ng-click='dtr.champPressed(40)' />
+                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Alistar.png"class='champ-img'  
+                ng-click='dtr.champPressed(12)' />
+                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Karma.png"class='champ-img'  
+                ng-click='dtr.champPressed(43)' />
+                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Lulu.png"class='champ-img' 
+                ng-click='dtr.champPressed(117)'  />
+                <img ng-src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/Velkoz.png"class='champ-img' 
+                ng-click='dtr.champPressed(161)'  />
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.1/lodash.js"></script>
+<script src='https://code.angularjs.org/1.6.1/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.min.js'></script>
+<script src="angular-chart.min.js"></script>
+<script src="angularInit.js"></script>
+<script src="data.js"></script>
+<script src="code.js"></script>
+<script>
+</script>
+</html>

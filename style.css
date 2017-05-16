@@ -1,0 +1,93 @@
+.custom-bar-chart {
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 10px rgba(230,230,230,0.85);
+  padding: 10px;
+  background-color: rgba(230,230,230,0.95);
+  margin: 0 auto;
+  height: 440px;
+  width: 800px;
+}
+
+.most-played-container {
+  display:  flex; 
+  justify-content: space-around;
+  width:  745px;
+  margin-left: 35px;
+}
+
+.most-played-container .champ-img{
+
+  width: 40px;
+  height: 40px;
+}
+
+.graph-picker-container {
+    display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0px 0px 10px 10px rgba(230,230,230,0.85);
+    background-color: rgba(230,230,230,0.95);
+    width: 800px;
+    padding:  10px;
+    margin: 0 auto;
+    margin-top: 35px;
+    font-size: 18px;
+    justify-content: center;
+}
+.graph-pick {
+  margin-left: 25px;
+}
+
+html {
+  height:   100%;
+}
+body {
+  overflow: hidden;
+  margin:   0;
+  height:   100%;
+}
+body .tpDP  {
+  height:   100%;
+}
+
+.reset {
+  right: -12%;
+  position: relative;
+  bottom: -20px;
+}
+
+.giantography {
+  height:   100%;
+  background-size: cover;
+}
+
+.chart-title {
+  text-align:   center;
+  margin: 5px;
+}
+
+.custom-line-chart {
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 10px rgba(230,230,230,0.85);
+  padding: 10px;
+  background-color: rgba(230,230,230,0.95);
+  margin: 0 auto;
+  height: 440px;
+  width: 800px;
+}
+.champ-container {
+  padding:  20px;
+  background-color: rgba(255,255,255,.2);
+  display: flex;
+  width:  800px;
+  margin:   0 auto;
+  flex-wrap:  wrap; 
+  justify-content:  center;
+}
+
+.champ-img {
+  cursor:   pointer;
+  height:   30px;
+  width:  30px;
+  padding:  2px;
+}
