@@ -1,6 +1,3 @@
-
-//myApp.directive('myDirective', function() {});
-//myApp.factory('myService', function() {});
 angular.module('tpDP').directive('backImg', function(){
     return {
     scope: { url:'@backImg' },
@@ -66,12 +63,7 @@ angular.module('tpDP').directive('backImg', function(){
       this.champOrderedBySeason[5] ? _.reduce(this.champOrderedBySeason[5], (dateArray, champ) => {   dateArray[new Date(champ.timestamp).getDay()] += 1;   return dateArray; }, [0, 0, 0, 0, 0, 0, 0]) : [0, 0, 0, 0, 0, 0, 0],
       this.champOrderedBySeason[7] ? _.reduce(this.champOrderedBySeason[7], (dateArray, champ) => {   dateArray[new Date(champ.timestamp).getDay()] += 1;   return dateArray; }, [0, 0, 0, 0, 0, 0, 0]) : [0, 0, 0, 0, 0, 0, 0],
       this.champOrderedBySeason[8] ? _.reduce(this.champOrderedBySeason[8], (dateArray, champ) => {   dateArray[new Date(champ.timestamp).getDay()] += 1;   return dateArray; }, [0, 0, 0, 0, 0, 0, 0]) : [0, 0, 0, 0, 0, 0, 0]]
-      //return [_.map(_.groupBy(this.champOrderedBySeason[3], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length),
-      // _.map(_.groupBy(this.champOrderedBySeason[5], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length),
-      // _.map(_.groupBy(this.champOrderedBySeason[7], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length)
-      // ,_.map(_.groupBy(this.champOrderedBySeason[8], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length)];
-    }
-    //console.log(this.orderedBySeason);
+     }
 
     this.recalculate = () => {
         this.lineChartMonthlyData = calculateMonthlyData();
@@ -83,10 +75,6 @@ angular.module('tpDP').directive('backImg', function(){
       _.reduce(this.champOrderedBySeason[5], (dateArray, champ) => {   dateArray[new Date(champ.timestamp).getMonth()] += 1;   return dateArray; }, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),
       _.reduce(this.champOrderedBySeason[7], (dateArray, champ) => {   dateArray[new Date(champ.timestamp).getMonth()] += 1;   return dateArray; }, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),
       _.reduce(this.champOrderedBySeason[8], (dateArray, champ) => {   dateArray[new Date(champ.timestamp).getMonth()] += 1;   return dateArray; }, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])]
-      //return [_.map(_.groupBy(this.champOrderedBySeason[3], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length),
-      // _.map(_.groupBy(this.champOrderedBySeason[5], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length),
-      // _.map(_.groupBy(this.champOrderedBySeason[7], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length)
-      // ,_.map(_.groupBy(this.champOrderedBySeason[8], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length)];
     }
 
 
@@ -95,10 +83,6 @@ angular.module('tpDP').directive('backImg', function(){
       this.champOrderedBySeason[5] ? this.champOrderedBySeason[5].length : 0,
       this.champOrderedBySeason[7] ? this.champOrderedBySeason[7].length : 0,
       this.champOrderedBySeason[8] ? this.champOrderedBySeason[8].length : 0]
-      //return [_.map(_.groupBy(this.champOrderedBySeason[3], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length),
-      // _.map(_.groupBy(this.champOrderedBySeason[5], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length),
-      // _.map(_.groupBy(this.champOrderedBySeason[7], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length)
-      // ,_.map(_.groupBy(this.champOrderedBySeason[8], (d) => new Date(d.timestamp).getDay()), (wd) => wd.length)];
     }
 
     this.barChartCGSOptions = {scales: {
@@ -141,9 +125,5 @@ angular.module('tpDP').directive('backImg', function(){
     this.lineChartMonthlyLabels = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dec'];
     this.lineChartMonthlySeries = ['Season 4','Season 5','Season 6','Season 7'];
     this.lineChartMonthlyData = calculateMonthlyData();
-
-    //this.lineChartData = [[10,5,6,3,2,1,7],[1,5,61,32,2,1,7],[102,15,56,33,22,11,7],[10,5,65,35,25,15,17]]
-    //this.gameDuration = gameDuration;
-    //this.matchesDate = matchesDate;
     
   }]);
